@@ -5,7 +5,6 @@ import { auth } from '../firebase';
 
 const Login = () => {
    const navigate=useNavigate();
-
    const handelSubmit = (e) => {
       e.preventDefault();
       const email = e.target[0].value;
@@ -17,8 +16,8 @@ const Login = () => {
          })
          .catch((error) => {
             // const errorCode = error.code;
-            const errorMessage = error.message;
-            console.log(errorMessage)
+            alert(error.message);
+            console.log(error.message)
          });
 
    }
