@@ -1,38 +1,272 @@
-.App {
-  text-align: center;
+.app{
+    margin: 0;
+    background-color:#03ae74;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.register, .login {
+    background-color: white;
+    width: 30%;
+    border-radius: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.register-header, .login-header{
+    text-align: center;
+    border-radius: 10px 10px 0 0;
+}
+.register-header h3,.login-header h3{
+    font-family: sans-serif;
+    font-weight: bolder;
+    color: #135c13;
+    margin: 10px 0 5px;
+}
+.register-header p,.login-header p{
+    margin: 0;
+    color: grey;
+}
+.register-form form, .login-form form{
+    display: flex;
+    flex-direction: column;
+    
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.register-form form input,.login-form form input{
+    width: 100;
+    margin: 10px;
+    height: 30px;
+    border: none;
+    border-bottom: 1px solid #dbc2c2;
+}
+.register-form form button, .login-form form button{
+    margin: 10px;
+    background-color: #135c13;
+    height: 30px;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+.register-footer p,.login-footer p{
+    font-size: medium;
+    color: rgb(103, 96, 96);
+    text-align: center;
 }
 
-.App-link {
-  color: #61dafb;
+.home{
+    background-color: white;
+    height: 90%;
+    width: 80%;
+    display: flex;
+    border-radius: 10px;
+}
+.sidebar{
+    flex: 1;
+    background-color: rgb(164, 214, 164);;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px 0 0 0;
+    
+    
+}
+.sidebarscroll{
+    overflow-y: scroll;
+    height: 100%;
+    background-color: rgb(45 121 45);
+}
+.sidebar-header{
+    display: flex;
+    align-items: center;
+    height: 60px;
+    padding: 10px;
+    background-color: #135c13;
+    border-radius: 10px 0 0 0;
+    color: #042f0f;
+    font-family: system-ui;
+    font-weight: bolder;
+}
+.userInfo{
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: .5rem;
+}
+.userInfo p{
+    color: white;
+}
+.avatar{
+    border-radius: 30px;
+    height: 40px;
+    width: 40px;
+    background: url('../src/components/avatar.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.sidebar-search{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* border-bottom: 1px solid rgb(57, 43, 43); */
+    background-color: rgb(68 134 68 / 48%);
+    
+}
+.sidebar-search input {
+    height: 30px;
+    border: none;      
+    padding: 5px;
+    margin: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid darkgreen;
+    background: none;
+    
+}
+.sidebar-search input::placeholder{
+    color: black;
+}
+.search-user{
+    margin: 10px;
+   padding: 10px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    cursor: pointer;
+    border-bottom: 2px solid darkgreen ;
+    position: relative;
+}
+.addUserIcon{
+    position: absolute;
+    right: 10px;
+}
+.sidebar-chats{
+    height: 100%;
+}
+.chat{
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    border-bottom: 1px solid darkgreen;
+    cursor: pointer;
+}
+.chat:hover{
+     background-color: #aad2aa63;
+}
+.chatinfo{
+    flex: 1;
+    padding: 10px;
+}
+.chatinfo h3{
+    margin: 0;
+}
+.chatinfo p{
+    margin: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.chatbox{
+    flex: 2;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    
+}
+.chatbox-header{
+    display: flex;
+    background-color: rgb(19, 137, 19);
+    padding: 10px;
+    height: 53px;
+    border-radius: 0 10px 0 0;
+    align-items: center;
+    color:white;
+    position: relative;
+}
+.chatbox-header button{
+    position: absolute;
+    right: 10px;
+    background: darkgreen;
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+}
+.chatbox img{
+    margin-right: 10px;
+}
+.chatbox-messages{
+    padding: 10px;
+    flex: 1;
+    background:url('./components/background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+    overflow-y: scroll;
+}
+.message, .sender{
+    display: flex;
+    gap: 10px;
+}
+.sender{
+    flex-direction: row-reverse;
+}
+.message-info{
+    position: relative;
+    top: 20px;
+}
+.reciever-text,.sender-text{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0;
+    background-color: #f2f2f2;
+    padding: 8px;
+    border-radius: 0 10px 10px 10px;
+}
+.sender-text{
+    background-color: #135c13;
+    color: white;
+    border-radius: 10px 0 10px 10px;
+}
+.message-info p{
+    margin: 0;
+    margin-top: 5px;
+    color: rgb(105, 102, 102);
+    font-size: small;
+    padding-left: 7px ;
+    
+}
+
+.chatbox-footer{
+    display: flex;
+    height: 60px;
+}
+.chatbox-footer input{
+    flex: 1;
+    margin: 10px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px black;
+}
+.footer-icons{
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    align-items: center;
+}
+.icon {
+    font-size: 30px;
+    cursor: pointer;
+}
+.send{
+    width: 70px;
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+    background-color: green;
+    color: white;
+    cursor: pointer;
+}
+.hidden{
+    display: none;
 }
